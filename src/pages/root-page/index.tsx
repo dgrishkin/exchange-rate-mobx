@@ -1,10 +1,10 @@
-import { exchangeRateObservable } from "$observables";
+import { exchangeRateObservable } from "$store";
 import { observer } from "mobx-react-lite";
 import { FC, useEffect, useState } from "react";
 import styles from "./RootPage.module.less";
 
 export const RootPage = observer(() => {
-    const [exchangeRate] = useState(() => exchangeRateObservable);
+    const [exchangeRate] = useState(exchangeRateObservable);
 
     useEffect(() => {
         exchangeRate.loadRates();

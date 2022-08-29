@@ -22,4 +22,6 @@ class ExchangeRateObservable {
     }
 }
 
-export default new ExchangeRateObservable();
+const observable = new ExchangeRateObservable();
+
+export default () => observable;
